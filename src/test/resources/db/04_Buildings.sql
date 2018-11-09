@@ -1,0 +1,51 @@
+INSERT INTO `Building`
+    (`id`,`name`,`description`)
+VALUES
+    (1,'Granary','Granary Building'),
+    (2,'Chicken House','Chicken House'),
+    (3,'Incubator','Incubator Building'),
+    (4,'Cleaning Center','Cleaning Center'),
+    (5,'Chicken Yard','Chicken Yard'),
+    (6,'Cocks House','Cocks House'),
+    (7,'Cocks Barrack','Cocks Barrack'),
+    (8,'Quarry','Quarry Building'),
+    (9,'School of Hammers','School of Hammers'),
+    (10,'Schools of Slingshots','Schools of Slingshots'),
+    (11,'Blast Furnace','Blast Furnace Building'),
+    (12,'School of Swordsmens','School of Swordsmens'),
+    (13,'School of Axes','School of Axes'),
+    (14,'Logger','Logger Building'),
+    (15,'School of Archers','School of Archers'),
+    (16,'School of Lancers','School of Lancers'),
+    (17,'Alchemy Labaratory','Alchemy Labaratory'),
+    (18,'School of Gunners','School of Gunners'),
+    (19,'School of Bazookas','School of Bazookas'),
+    (20,'Altar','Altar Building'),
+    (21,'School of Mages','School of Mages'),
+    (22,'Ziggurat','Ziggurat Building');
+
+INSERT INTO `Bulding_product`
+    (`id`,`building_id`,`resource_id`,`number_per_sec`)
+VALUES
+    (1,1,1,150),
+    (2,2,2,100),
+    (3,3,3,50),
+    (4,4,4,50),
+    (5,5,5,50),
+    (6,6,6,50),
+    (7,7,7,50),
+    (8,8,8,50),
+    (9,9,9,50),
+    (10,10,10,50),
+    (11,11,11,50),
+    (12,12,12,50),
+    (13,13,13,50),
+    (14,14,14,50),
+    (15,15,15,50),
+    (16,16,16,50),
+    (17,17,17,50),
+    (18,18,18,50),
+    (19,19,19,50),
+    (20,20,20,50),
+    (21,21,21,10),
+    (22,22,22,5);

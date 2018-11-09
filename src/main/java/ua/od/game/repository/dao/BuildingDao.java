@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface BuildingDao {
-    Map<BuildingsEntity, List<ResourcesEntity>> getAllBuildingList();
+    Map<BuildingsEntity, ResourcesEntity> getAllBuildingList();
 }
