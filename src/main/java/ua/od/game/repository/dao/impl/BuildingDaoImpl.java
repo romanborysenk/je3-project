@@ -16,8 +16,8 @@ public class BuildingDaoImpl implements BuildingDao {
 
     @Override
     public Map<BuildingEntity,List<ResourceEntity>> getAllBuildingList() {
-        return SqlHelper.prepareStatement("SELECT  a.id, a.name, a.description, b.resource_id, b.number_per_sec " +
-                "from Building a inner join Building_Product b on a.id = b.building_id", pstmt -> {
+        /*return SqlHelper.prepareStatement("SELECT   a.id, a.name, a.description, b.resource_id, b.number_per_sec " +
+                "from Building a inner join Building_Product b on a.id = b.building_id group order by a.id ASC", pstmt -> {
             ResultSet rs = pstmt.executeQuery();
             Map<BuildingEntity,List<ResourceEntity>> map = new LinkedHashMap<>();
             List<ResourceEntity> list_all = new LinkedList<>();
@@ -27,7 +27,7 @@ public class BuildingDaoImpl implements BuildingDao {
             while(rs.next()) {
                 list_all.forEach(resources -> {
                     try {
-                        if(resources.getId().equals(rs.getInt("b.resource_id"))) {
+                        if(resources.getId().equals(rs.getInt("resource_id"))) {
                             list.add(resources);
                         }
                     } catch (SQLException e) {
@@ -35,14 +35,30 @@ public class BuildingDaoImpl implements BuildingDao {
                     }
                 });
                 map.put(new BuildingEntity(){{
-                    setId(rs.getInt("a.id"));
-                    setName(rs.getString("a.name"));
-                    setDescription(rs.getString("a.description"));
-                    setNumber_per_sec(rs.getFloat("b.number_per_sec"));
+                    setId(rs.getInt("id"));
+                    setName(rs.getString("name"));
+                    setDescription(rs.getString("description"));
+                    setNumber_per_sec(rs.getFloat("number_per_sec"));
                 }}, list);
                 list.clear();
             }
             return map;
+        });*/
+        Map<BuildingEntity,List<ResourceEntity>> map1 = new LinkedHashMap<>();
+        map1 = SqlHelper.prepareStatement("SELECT   id, name, description from Building", pstmt -> {
+            ResultSet rs = pstmt.executeQuery();
+            Map<BuildingEntity,List<ResourceEntity>> map = new LinkedHashMap<>();
+            while(rs.next()) {
+                map.put(
+                        new BuildingEntity(){{
+                            setId(rs.getInt("id"));
+                            setName(rs.getString("name"));
+                            setDescription(rs.getString("description"));
+                        }},
+                        null);
+            }
+            return map;
         });
+        return map1;
     }
 }

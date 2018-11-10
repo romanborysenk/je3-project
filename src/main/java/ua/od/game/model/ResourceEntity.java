@@ -1,10 +1,9 @@
 package ua.od.game.model;
 
-public class BuildingEntity {
+public class ResourceEntity {
     private Integer id;
     private String name;
     private String description;
-    private Float number_per_sec;
 
     public Integer getId() {
         return id;
@@ -29,17 +28,4 @@ public class BuildingEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public Float getNumber_per_sec() {
-        return number_per_sec;
-    }
-
-    public void setNumber_per_sec(Float number_per_sec) {
-        this.number_per_sec = number_per_sec;
-    }
-
-
-
-
-
 }
