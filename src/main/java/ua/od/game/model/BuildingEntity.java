@@ -4,7 +4,7 @@ public class BuildingEntity {
     private Integer id;
     private String name;
     private String description;
-    private Float number_per_sec;
+
 
     public Integer getId() {
         return id;
@@ -30,12 +30,12 @@ public class BuildingEntity {
         this.description = description;
     }
 
-    public Float getNumber_per_sec() {
-        return number_per_sec;
-    }
-
-    public void setNumber_per_sec(Float number_per_sec) {
-        this.number_per_sec = number_per_sec;
+    @Override
+    public String toString() {
+        return new String("Building: " +
+                "id = " + getId() +
+                " name = " + getName() +
+                " description = " + getDescription());
     }
 
 

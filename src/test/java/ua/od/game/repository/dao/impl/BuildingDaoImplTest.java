@@ -10,6 +10,8 @@ import ua.od.game.repository.dao.DbTest;
 import java.util.List;
 import java.util.Map;
 
+import static org.junit.Assert.assertNotNull;
+
 public class BuildingDaoImplTest extends DbTest {
 
     BuildingDaoImpl buildingDao;
@@ -21,17 +23,18 @@ public class BuildingDaoImplTest extends DbTest {
 
     @Test
     public void getAllBuildingListTest() {
-
-        Map<BuildingEntity, List<ResourceEntity>> map = buildingDao.getAllBuildingList();
-
+        Map<BuildingEntity, Map<ResourceEntity,Float>> map = buildingDao.getAllBuildingList();
+        System.out.println(map.size());
         map.forEach((map1,list1) -> {
-            System.out.println("building:" +  map1.getName() + " " );
-                }
-
-        );
-
+            System.out.println(map1.toString());
+            list1.forEach((resource,resPerSeq) ->{
+            System.out.println("\t" + resource.toString() + "number_per_sec = " + resPerSeq);
+            });
+            System.out.println();
+        });
+        map.forEach((map1,list1) -> {
+            assertNotNull(map1);
+            assertNotNull(list1);
+        });
     }
-
-
-
 }
