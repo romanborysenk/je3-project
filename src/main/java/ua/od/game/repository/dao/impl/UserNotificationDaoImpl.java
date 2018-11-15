@@ -2,7 +2,6 @@ package ua.od.game.repository.dao.impl;
 
 import ua.od.game.repository.dao.UserNotificationDao;
 import ua.od.game.repository.helper.SqlHelper;
-
 import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;

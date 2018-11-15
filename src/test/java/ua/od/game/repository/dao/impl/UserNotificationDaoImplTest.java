@@ -36,6 +36,7 @@ public class UserNotificationDaoImplTest extends DbTest {
         assertFalse(unview < 0);
     }
 
+
     @Test
     public void testClearUserNotifications() {
         assertTrue(userNotification.clearUserNotifications(1));
